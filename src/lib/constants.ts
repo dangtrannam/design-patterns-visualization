@@ -1,2 +1,2 @@
 export const GITHUB_URL =
-  "https://github.com/dang-thuy-anh/design-pattern-visualizer";
+  "https://github.com/dangtrannam/design-patterns-visualization";
