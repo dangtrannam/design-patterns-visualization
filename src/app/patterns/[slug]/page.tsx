@@ -1,11 +1,17 @@
+import { notFound } from "next/navigation";
+import { patternSlugs, getPattern } from "@/content";
+import { PatternPageLayout } from "@/components/pattern/pattern-page-layout";
+
 interface PatternPageProps {
   params: { slug: string };
 }
 
+export function generateStaticParams() {
+  return patternSlugs.map((slug) => ({ slug }));
+}
+
 export default function PatternPage({ params }: PatternPageProps) {
-  return (
-    <main className="flex min-h-screen flex-col p-8">
-      <h1 className="text-3xl font-bold capitalize">{params.slug.replace(/-/g, " ")}</h1>
-    </main>
-  );
+  const pattern = getPattern(params.slug);
+  if (!pattern) notFound();
+  return <PatternPageLayout pattern={pattern} />;
 }

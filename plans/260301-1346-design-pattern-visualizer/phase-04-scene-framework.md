@@ -7,8 +7,9 @@
 
 ## Overview
 - **Priority:** P1
-- **Status:** pending
+- **Status:** completed
 - **Effort:** 5h
+- **Completed:** 2026-03-01
 - **Description:** Build reusable R3F infrastructure: canvas wrapper, Zustand step store, code block component, step controls, WebGL fallback, and shared 3D primitives.
 
 ## Key Insights
@@ -153,16 +154,16 @@ interface PatternState {
 15. Test: navigate to `/patterns/factory-method`, verify canvas loads with default lighting, step controls work, code block renders
 
 ## Todo List
-- [ ] Create Zustand pattern store
-- [ ] Create Shiki helper + CodeBlock server component
-- [ ] Create PatternCanvas wrapper (dynamic, ssr: false)
-- [ ] Create shared lighting + camera rig
-- [ ] Create reusable 3D primitives (sphere, arrow, label, particles)
-- [ ] Create StepControls UI
-- [ ] Create WebGL fallback
-- [ ] Create PatternPageLayout compositor
-- [ ] Wire up [slug] route with generateStaticParams
-- [ ] Test end-to-end with placeholder scene
+- [x] Create Zustand pattern store
+- [x] Create Shiki helper + CodeBlock server component
+- [x] Create PatternCanvas wrapper (dynamic, ssr: false)
+- [x] Create shared lighting + camera rig
+- [x] Create reusable 3D primitives (sphere, arrow, label, particles)
+- [x] Create StepControls UI
+- [x] Create WebGL fallback
+- [x] Create PatternPageLayout compositor
+- [x] Wire up [slug] route with generateStaticParams
+- [x] Test end-to-end with placeholder scene (build passes, all 5 pattern pages SSG)
 
 ## Success Criteria
 - `/patterns/factory-method` loads with R3F canvas (placeholder cube)

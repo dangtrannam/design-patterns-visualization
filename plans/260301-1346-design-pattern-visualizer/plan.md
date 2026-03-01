@@ -27,7 +27,7 @@ Next.js 14 App Router | React Three Fiber + drei | Zustand | Shiki (SSR) | Tailw
 | 01 | Project Setup & Tooling | 2h | completed | 2026-03-01 | [phase-01](phase-01-project-setup.md) |
 | 02 | Design System & Layout Shell | 3h | completed | 2026-03-01 | [phase-02](phase-02-design-system.md) |
 | 03 | Pattern Content Model & Data | 5h | completed | 2026-03-01 | [phase-03](phase-03-content-model.md) |
-| 04 | 3D Scene Framework | 5h | pending | [phase-04](phase-04-scene-framework.md) |
+| 04 | 3D Scene Framework | 5h | completed | 2026-03-01 | [phase-04](phase-04-scene-framework.md) |
 | 05 | Factory Method Scene + Page | 5h | pending | [phase-05](phase-05-factory-method.md) |
 | 06 | Observer Scene + Page | 5h | pending | [phase-06](phase-06-observer.md) |
 | 07 | Singleton Scene + Page | 4h | pending | [phase-07](phase-07-singleton.md) |
