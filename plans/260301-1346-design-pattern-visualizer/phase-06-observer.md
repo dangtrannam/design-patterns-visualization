@@ -7,8 +7,9 @@
 
 ## Overview
 - **Priority:** P1
-- **Status:** pending
+- **Status:** completed
 - **Effort:** 5h
+- **Completed:** 2026-03-01
 - **Description:** Central event hub with subscriber nodes connected by edges; events travel as animated particle streams. Pub-sub visualization.
 
 ## Key Insights
@@ -65,13 +66,13 @@ ObserverScene
 7. Test: full page flow, auto-play, manual step navigation
 
 ## Todo List
-- [ ] Create EventHub component
-- [ ] Create SubscriberNode component
-- [ ] Create ConnectionEdge component
-- [ ] Create ObserverScene orchestrator
-- [ ] Wire up in page route
-- [ ] Sync with content steps
-- [ ] Test full flow
+- [x] Create EventHub component
+- [x] Create SubscriberNode component
+- [x] Create ConnectionEdge component
+- [x] Create ObserverScene orchestrator
+- [x] Wire up in page route
+- [x] Sync with content steps
+- [x] Test full flow
 
 ## Success Criteria
 - Hub emits particles that travel to all 4 subscribers

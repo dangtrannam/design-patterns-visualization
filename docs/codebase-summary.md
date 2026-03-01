@@ -65,12 +65,18 @@ D:/Dev/DesignPatternVisualize/
 │       │   ├── animated-arrow.tsx    # Pulsing arrow primitive
 │       │   ├── floating-label.tsx    # Billboard text primitive
 │       │   └── particle-stream.tsx   # Animated particles
-│       └── factory-method/
-│           ├── factory-method-scene.tsx  # Main orchestrator (NEW)
-│           ├── machine-station.tsx       # Glowing machine node (NEW)
-│           ├── conveyor-belt.tsx         # Assembly belt geometry (NEW)
-│           ├── product.tsx               # Materializing product shape (NEW)
-│           └── request-arrow.tsx         # Client request arrow (NEW)
+│       ├── factory-method/
+│       │   ├── factory-method-scene.tsx  # Main orchestrator
+│       │   ├── machine-station.tsx       # Glowing machine node
+│       │   ├── conveyor-belt.tsx         # Assembly belt geometry
+│       │   ├── product.tsx               # Materializing product shape
+│       │   └── request-arrow.tsx         # Client request arrow
+│       └── observer/
+│           ├── observer-scene.tsx        # Main orchestrator (NEW)
+│           ├── event-hub.tsx             # Hub sphere with emit pulse (NEW)
+│           ├── subscriber-node.tsx       # Subscriber sphere + label (NEW)
+│           ├── connection-edge.tsx       # Hub-to-subscriber line (NEW)
+│           └── (ParticleStream from shared/)
 ├── plans/                            # Implementation planning
 ├── public/                           # Static assets (if any)
 ├── package.json                      # Dependencies
@@ -161,6 +167,31 @@ D:/Dev/DesignPatternVisualize/
   - Visible only on step 1
   - Uses shared AnimatedArrow primitive
 
+**Observer Scene** (`src/scenes/observer/`):
+- **ObserverScene**: Main orchestrator
+  - Reads `currentStep` from Zustand
+  - Positions 4 subscriber nodes at equal XZ angles (radius=3)
+  - Step 0: idle state
+  - Step 1: EventHub pulses (orange, fast), emits ParticleStream to subscribers
+  - Step 2: All subscriber nodes react with staggered pulseSpeed
+  - Manages visibility and animation state per step
+- **EventHub**: Central hub sphere (orange, large emissive pulse)
+  - Props: isEmitting (boolean)
+  - Fast pulsing on emit, dims on idle
+  - Source point for ParticleStream
+- **SubscriberNode**: Colored sphere + FloatingLabel (subscriber name)
+  - Props: position, label, color, pulseSpeed
+  - Pulsing opacity tied to parent step (staggered per subscriber)
+  - Connected to hub via ConnectionEdge
+- **ConnectionEdge**: Static Line from hub to subscriber
+  - Props: startPos, endPos, color
+  - Per-subscriber color matching SubscriberNode
+  - Glowing line material for visibility
+- **ParticleStream**: Animated particles flowing hub→subscribers
+  - Triggered on step 1 (emit event)
+  - Particles travel from hub center to each subscriber radius
+  - Coloured per-destination (matches SubscriberNode colors)
+
 ---
 
 ## Static Content Files
@@ -178,7 +209,7 @@ Each pattern file in `src/content/` exports a `Pattern` constant with:
 - `factory-method.content.ts` ✓ (Phase 05)
 
 **In Progress:**
-- `observer.content.ts` (Phase 06)
+- `observer.content.ts` (Phase 06) — Scene implementation complete ✓
 - `singleton.content.ts` (Phase 07)
 - `strategy.content.ts` (Phase 08)
 - `decorator.content.ts` (Phase 09)
@@ -266,11 +297,11 @@ Zustand Store (Client)
 
 ## Next Steps
 
-**Phase 06 (Observer):**
-- Reuse all shared infrastructure from Phase 04
-- Add Observer pattern content (`observer.content.ts` needs step details)
-- Create `src/scenes/observer/observer-scene.tsx` + child components
-- Register scene in `getPatternScene()` function
+**Phase 06 (Observer):** Scene implementation complete ✓
+- 4 Observer scene components created (EventHub, SubscriberNode, ConnectionEdge, ObserverScene)
+- Particle streaming from hub to subscribers on emit
+- Staggered subscriber pulse response
+- TODO: Finalize `observer.content.ts` step definitions and test page integration
 
 **Phase 07-09:** Repeat pattern (Singleton, Strategy, Decorator)
 
@@ -289,6 +320,10 @@ Zustand Store (Client)
 | `src/scenes/factory-method/factory-method-scene.tsx` | Factory orchestrator | ~49 |
 | `src/scenes/factory-method/machine-station.tsx` | Machine component | ~58 |
 | `src/scenes/factory-method/conveyor-belt.tsx` | Belt geometry | ~36 |
+| `src/scenes/observer/observer-scene.tsx` | Observer orchestrator | ~50 |
+| `src/scenes/observer/event-hub.tsx` | Hub sphere with emit pulse | ~35 |
+| `src/scenes/observer/subscriber-node.tsx` | Subscriber sphere + label | ~40 |
+| `src/scenes/observer/connection-edge.tsx` | Hub-to-subscriber line | ~25 |
 
 ---
 
