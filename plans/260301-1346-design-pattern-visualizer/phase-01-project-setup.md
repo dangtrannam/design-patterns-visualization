@@ -6,7 +6,7 @@
 
 ## Overview
 - **Priority:** P1 (blocks everything)
-- **Status:** pending
+- **Status:** completed
 - **Effort:** 2h
 - **Description:** Initialize Next.js 14 project with all dependencies, folder structure, and build config.
 
@@ -90,13 +90,13 @@ src/
 13. Init git repo: `git init && git add -A && git commit -m "chore: init next.js 14 project with r3f stack"`
 
 ## Todo List
-- [ ] Create Next.js project
-- [ ] Install all dependencies
-- [ ] Init shadcn/ui
-- [ ] Create folder structure
-- [ ] Configure next.config.js
-- [ ] Verify dev + build succeed
-- [ ] Init git repo
+- [x] Create Next.js project
+- [x] Install all dependencies
+- [x] Init shadcn/ui
+- [x] Create folder structure
+- [x] Configure next.config.js
+- [x] Verify dev + build succeed
+- [x] Init git repo
 
 ## Success Criteria
 - `npm run dev` starts without errors

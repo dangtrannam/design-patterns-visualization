@@ -1,7 +1,7 @@
 ---
 title: "Design Pattern Visualizer - 3D Interactive Learning Platform"
 description: "Next.js 14 site with R3F 3D scenes visualizing 5 design patterns for MVP launch"
-status: pending
+status: in-progress
 priority: P1
 effort: 40h
 branch: main
@@ -22,11 +22,11 @@ Next.js 14 App Router | React Three Fiber + drei | Zustand | Shiki (SSR) | Tailw
 
 ## Phases
 
-| # | Phase | Effort | Status | File |
-|---|-------|--------|--------|------|
-| 01 | Project Setup & Tooling | 2h | pending | [phase-01](phase-01-project-setup.md) |
-| 02 | Design System & Layout Shell | 3h | pending | [phase-02](phase-02-design-system.md) |
-| 03 | Pattern Content Model & Data | 5h | pending | [phase-03](phase-03-content-model.md) |
+| # | Phase | Effort | Status | Completed | File |
+|---|-------|--------|--------|-----------|------|
+| 01 | Project Setup & Tooling | 2h | completed | 2026-03-01 | [phase-01](phase-01-project-setup.md) |
+| 02 | Design System & Layout Shell | 3h | completed | 2026-03-01 | [phase-02](phase-02-design-system.md) |
+| 03 | Pattern Content Model & Data | 5h | completed | 2026-03-01 | [phase-03](phase-03-content-model.md) |
 | 04 | 3D Scene Framework | 5h | pending | [phase-04](phase-04-scene-framework.md) |
 | 05 | Factory Method Scene + Page | 5h | pending | [phase-05](phase-05-factory-method.md) |
 | 06 | Observer Scene + Page | 5h | pending | [phase-06](phase-06-observer.md) |

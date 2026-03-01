@@ -6,8 +6,9 @@
 
 ## Overview
 - **Priority:** P1
-- **Status:** pending
+- **Status:** completed
 - **Effort:** 3h
+- **Completed:** 2026-03-01
 - **Description:** Dark theme design system, shared layout components, pattern page shell.
 
 ## Key Insights
@@ -75,15 +76,15 @@
 11. Test: render Navbar + Footer + placeholder content; verify dark theme renders correctly
 
 ## Todo List
-- [ ] Define color palette CSS variables
-- [ ] Configure Tailwind with custom colors
-- [ ] Force dark mode in layout
-- [ ] Install shadcn base components
-- [ ] Build Navbar
-- [ ] Build Footer
-- [ ] Build PageShell
-- [ ] Build PatternCard
-- [ ] Verify responsive layout
+- [x] Define color palette CSS variables (deep navy/neon, dark-only `:root,.dark` merged block)
+- [x] Configure Tailwind with custom colors (already set via shadcn; no changes needed)
+- [x] Force dark mode in layout (`<html className="dark">`)
+- [x] Install shadcn base components (button, badge, separator, card)
+- [x] Build Navbar (sticky, backdrop-blur, pattern links, GitHub icon)
+- [x] Build Footer (minimal, copyright, links)
+- [x] Build PageShell (gradient header, content container, optional category badge)
+- [x] Build PatternCard (Framer Motion hover, category color, link to pattern)
+- [x] Verify responsive layout (build passes, tsc clean)
 
 ## Success Criteria
 - Dark theme renders with correct colors across all viewports
@@ -95,5 +96,21 @@
 - **Color contrast issues:** Test text readability against dark backgrounds (WCAG AA minimum)
 - **Font loading flash:** Use `next/font` for Geist/Inter to avoid FOUT
 
+## Implementation Summary
+
+### Files Created/Modified
+- `src/app/globals.css` — neon dark palette CSS vars
+- `src/app/layout.tsx` — dark class + Navbar/Footer
+- `src/components/layout/navbar.tsx`
+- `src/components/layout/footer.tsx`
+- `src/components/layout/page-shell.tsx`
+- `src/components/pattern/pattern-card.tsx`
+- `src/lib/constants.ts` — GITHUB_URL
+- `src/components/ui/button.tsx`, `badge.tsx`, `separator.tsx`, `card.tsx` (shadcn generated)
+
+### Code Review
+Score: 8.5/10 — all identified issues fixed before finalization.
+
 ## Next Steps
-- Phase 04 (Scene Framework) can start once this + Phase 03 are done
+- Phase 03 (Pattern Content Model & Data) — unblocked
+- Phase 04 (Scene Framework) — awaiting Phase 03 completion
