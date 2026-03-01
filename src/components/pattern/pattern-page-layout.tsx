@@ -4,6 +4,7 @@ import { PageShell } from "@/components/layout/page-shell";
 import { CodeBlock } from "./code-block";
 import { StepControls } from "./step-controls";
 import { WebGLFallback } from "./webgl-fallback";
+import { FactoryMethodScene } from "@/scenes/factory-method/factory-method-scene";
 
 // Dynamic import keeps Three.js out of the server bundle
 const PatternCanvas = dynamic(
@@ -16,6 +17,15 @@ const PatternCanvas = dynamic(
   }
 );
 
+/**
+ * Maps pattern slug to its 3D scene component.
+ * All entries MUST be "use client" components — never async server imports.
+ */
+function getPatternScene(slug: string): React.ReactNode {
+  if (slug === "factory-method") return <FactoryMethodScene />;
+  return null;
+}
+
 interface PatternPageLayoutProps {
   pattern: Pattern;
 }
@@ -25,6 +35,8 @@ interface PatternPageLayoutProps {
  * Renders: header → problem → 3D canvas → step controls → code → real-world → anti-patterns.
  */
 export function PatternPageLayout({ pattern }: PatternPageLayoutProps) {
+  const scene = getPatternScene(pattern.slug);
+
   return (
     <PageShell
       title={pattern.name}
@@ -43,7 +55,9 @@ export function PatternPageLayout({ pattern }: PatternPageLayoutProps) {
           <PatternCanvas
             steps={pattern.steps}
             className="h-[500px] overflow-hidden rounded-lg border border-white/10"
-          />
+          >
+            {scene}
+          </PatternCanvas>
         </WebGLFallback>
       </section>
 

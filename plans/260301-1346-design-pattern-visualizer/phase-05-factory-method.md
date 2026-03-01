@@ -7,8 +7,9 @@
 
 ## Overview
 - **Priority:** P1
-- **Status:** pending
+- **Status:** completed
 - **Effort:** 5h
+- **Completed:** 2026-03-01
 - **Description:** First complete pattern page. Assembly line metaphor with 3 machine nodes creating different product objects. This is the template for all subsequent patterns.
 
 ## Key Insights
@@ -97,15 +98,15 @@ FactoryMethodScene
 9. Performance check: verify R3F chunk loads only on this route
 
 ## Todo List
-- [ ] Create ConveyorBelt component
-- [ ] Create MachineStation component
-- [ ] Create Product component
-- [ ] Create RequestArrow component
-- [ ] Create FactoryMethodScene orchestrator
-- [ ] Wire up in [slug]/page.tsx
-- [ ] Sync steps with CodeBlock highlights
-- [ ] Test full page flow
-- [ ] Performance check (bundle splitting)
+- [x] Create ConveyorBelt component
+- [x] Create MachineStation component
+- [x] Create Product component
+- [x] Create RequestArrow component
+- [x] Create FactoryMethodScene orchestrator
+- [x] Wire up in [slug]/page.tsx
+- [x] Sync steps with CodeBlock highlights
+- [x] Test full page flow
+- [x] Performance check (bundle splitting)
 
 ## Success Criteria
 - Scene renders 3 machine stations on a conveyor belt
