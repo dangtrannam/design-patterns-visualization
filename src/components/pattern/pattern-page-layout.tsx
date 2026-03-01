@@ -6,6 +6,9 @@ import { StepControls } from "./step-controls";
 import { WebGLFallback } from "./webgl-fallback";
 import { FactoryMethodScene } from "@/scenes/factory-method/factory-method-scene";
 import { ObserverScene } from "@/scenes/observer/observer-scene";
+import { SingletonScene } from "@/scenes/singleton/singleton-scene";
+import { StrategyScene } from "@/scenes/strategy/strategy-scene";
+import { DecoratorScene } from "@/scenes/decorator/decorator-scene";
 
 // Dynamic import keeps Three.js out of the server bundle
 const PatternCanvas = dynamic(
@@ -25,6 +28,9 @@ const PatternCanvas = dynamic(
 function getPatternScene(slug: string): React.ReactNode {
   if (slug === "factory-method") return <FactoryMethodScene />;
   if (slug === "observer") return <ObserverScene />;
+  if (slug === "singleton") return <SingletonScene />;
+  if (slug === "strategy") return <StrategyScene />;
+  if (slug === "decorator") return <DecoratorScene />;
   return null;
 }
 

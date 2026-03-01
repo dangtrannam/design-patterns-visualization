@@ -1,10 +1,17 @@
+import { HeroSection } from "@/components/layout/hero-section";
+import { PatternGrid } from "@/components/layout/pattern-grid";
+import { ValueProp } from "@/components/layout/value-prop";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold">Design Pattern Visualizer</h1>
-      <p className="mt-4 text-muted-foreground">
-        Interactive 3D visualizations of software design patterns.
-      </p>
+    <main>
+      <HeroSection />
+      <section className="container mx-auto px-4 py-16">
+        <PatternGrid />
+      </section>
+      <section className="container mx-auto px-4 py-16 border-t border-white/10">
+        <ValueProp />
+      </section>
     </main>
   );
 }

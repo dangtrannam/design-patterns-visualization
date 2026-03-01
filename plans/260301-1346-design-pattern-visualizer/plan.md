@@ -1,7 +1,7 @@
 ---
 title: "Design Pattern Visualizer - 3D Interactive Learning Platform"
 description: "Next.js 14 site with R3F 3D scenes visualizing 5 design patterns for MVP launch"
-status: in-progress
+status: completed
 priority: P1
 effort: 40h
 branch: main
@@ -30,10 +30,10 @@ Next.js 14 App Router | React Three Fiber + drei | Zustand | Shiki (SSR) | Tailw
 | 04 | 3D Scene Framework | 5h | completed | 2026-03-01 | [phase-04](phase-04-scene-framework.md) |
 | 05 | Factory Method Scene + Page | 5h | completed | 2026-03-01 | [phase-05](phase-05-factory-method.md) |
 | 06 | Observer Scene + Page | 5h | completed | 2026-03-01 | [phase-06](phase-06-observer.md) |
-| 07 | Singleton Scene + Page | 4h | pending | [phase-07](phase-07-singleton.md) |
-| 08 | Strategy Scene + Page | 4h | pending | [phase-08](phase-08-strategy.md) |
-| 09 | Decorator Scene + Page | 4h | pending | [phase-09](phase-09-decorator.md) |
-| 10 | Landing Page, SEO & Deploy | 3h | pending | [phase-10](phase-10-landing-seo-deploy.md) |
+| 07 | Singleton Scene + Page | 4h | completed | 2026-03-01 | [phase-07](phase-07-singleton.md) |
+| 08 | Strategy Scene + Page | 4h | completed | 2026-03-01 | [phase-08](phase-08-strategy.md) |
+| 09 | Decorator Scene + Page | 4h | completed | 2026-03-01 | [phase-09](phase-09-decorator.md) |
+| 10 | Landing Page, SEO & Deploy | 3h | completed | 2026-03-01 | [phase-10](phase-10-landing-seo-deploy.md) |
 
 ## Key Dependencies
 - Phase 01 blocks all others

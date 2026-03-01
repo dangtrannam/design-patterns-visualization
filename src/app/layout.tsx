@@ -16,8 +16,12 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Design Pattern Visualizer",
-  description: "Interactive 3D visualizations of software design patterns.",
+  title: {
+    template: "%s | Design Pattern Visualizer",
+    default: "Design Pattern Visualizer",
+  },
+  description:
+    "Interactive 3D visualizations of GoF design patterns. Learn Factory Method, Observer, Singleton, Strategy, and Decorator with animated Three.js scenes.",
 };
 
 export default function RootLayout({
