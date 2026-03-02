@@ -18,7 +18,7 @@ export function GhostOrb({ visible }: GhostOrbProps) {
   const elapsedVisible = useRef<number>(0);
   const FADE_DURATION = 1.2;
 
-  useFrame(({ clock: _clock }, delta) => {
+  useFrame(({  }, delta) => {
     const mat = matRef.current;
     if (!mat) return;
 
